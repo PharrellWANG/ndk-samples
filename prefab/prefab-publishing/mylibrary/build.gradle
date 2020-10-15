@@ -17,12 +17,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
-    ndkVersion '21.2.6472646'
+    compileSdkVersion 30
+    ndkVersion '21.3.6528147'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
 
         externalNativeBuild {
             cmake {
@@ -51,9 +51,11 @@ android {
 
     // Avoid packing the unnecessary libraries into final AAR, for details
     // refer to https://issuetracker.google.com/issues/168777344#comment5
+    // Note that if your AAR's Java code uses any C/C++ code support in the same AAR,
+    //      the workaround could not be used.
     packagingOptions {
-//        exclude("**/libmylibrary.so")
-//        exclude("**/libc++_shared.so")
+        exclude("**/libmylibrary.so")
+        exclude("**/libc++_shared.so")
     }
 
 }

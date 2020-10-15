@@ -19,12 +19,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    ndkVersion '21.2.6472646'
+    compileSdkVersion 30
+    ndkVersion '21.3.6528147'
     defaultConfig {
         applicationId "com.example.curlssl"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
